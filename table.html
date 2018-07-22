@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Sample Table v2</title>
-    <link rel="stylesheet" href="tableStyles1.css" />
+    <!-- Include stylesheet for Table -->
+    <link rel="stylesheet" href="tableStyles.css" />
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
     <!-- Include jQuery Popup Overlay -->
@@ -24,20 +25,30 @@
             <tr>
                 <td>7/16/2018</td>
                 <td>Kansas City</td>
-                <td> <a class="initialism basic_open btn btn-success" href="#basic">Basic</a> , Album Cover</td>
+                <td> <a class="initialism external1_open btn btn-success" href="#external1">Image</a> ,<a class="initialism external2_open btn btn-success" href="#external2"> HTML List</a></td>
             </tr>
         </tbody>
     </table>
 
-    <!-- Basic -->
-    <div id="basic" class="well" style="max-width:44em;">
-        <h4>Basic example</h4>
-        <img src="ticket.jpg" />
-        <button class="basic_close btn btn-default">Close</button>
-    </div>
+    <!-- Invoke calls to popup overlays -->
+    <!-- External1 -->
+    <div id="external1" class="well" style="max-width:44em;" />
     <script>
         $(document).ready(function () {
-            $('#basic').popup();
+            $('#external1').popup();
+        });
+        $(function () {
+            $("#external1").load("external1.html");
+        });
+    </script>
+    <!-- External2 -->
+    <div id="external2" class="well" style="max-width:44em;" />
+    <script>
+        $(document).ready(function () {
+            $('#external2').popup();
+        });
+        $(function () {
+            $("#external2").load("external2.html");
         });
     </script>
 
